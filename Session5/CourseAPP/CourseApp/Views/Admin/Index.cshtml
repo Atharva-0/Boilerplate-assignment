@@ -1,0 +1,153 @@
+﻿@*@model IEnumerable<Course>
+
+@{
+    ViewData["Title"] = "Courses";
+}
+@{
+    Layout = null;
+};
+
+<div class="container-fluid bg-dark py-4">
+    <h1 class="mt-4 text-light">Courses Preview</h1>
+    <p>
+        <a asp-action="AddCourse" class="btn btn-dark">Create New</a>
+    </p>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 col-xs-6 border-dark mb-3">
+                <div class="card mb-3">
+                    <div class="card-header bg-primary text-white">
+                        <p class="card-text">
+                            <h5 class="card-title mb-0">
+                                @item.CourseName
+                                <a class="text-white float-right" asp-action="EditCourse" asp-route-id="@item.CourseID"><i class="bi bi-pencil-square"></i></a>
+                            </h5>
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="@item.ImageURL" class="card-img-top" width="100%" object-fit-cover alt="@item.CourseName">
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-title">Id: <span>@item.CourseID</span></p>
+                                <p class="card-title">Name: <span>@item.CourseName</span></p>
+                                <p class="card-title">Category: <span>@item.CourseCategory</span></p>
+                                <p class="card-title">Price: <span>@item.CoursePrice</span></p>
+                                <p class="card-title">
+                                    <b>Rating:</b>
+                                    @if (item.CoursePrice >= 3000)
+                                    {
+                                        <span class="badge bg-success text-white">5</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-primary text-white">4.5</span>
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text">
+                            <a class="btn btn-outline-primary float-right" asp-action="Index" asp-route-id="@item.CourseID"><i class="bi bi-eye-fill"></i>Show Details</a>
+                            <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i> Price: @item.CoursePrice</a>
+                            <a class="btn btn-primary" asp-action="EditCourse" asp-route-id="@item.CourseID">Edit</a>
+                            <a class="btn btn-danger" asp-action="DelCourse" asp-route-id="@item.CourseID">Delete</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+*@
+
+
+@model IEnumerable<Course>
+
+@{
+    ViewData["Title"] = "Courses";
+}
+@*@{
+    Layout = null;
+};*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-TW8MqZM2JzVB8ik5+t/SBpzgDUECVgI44bBJMgMQko1XqYNbfmVdJq7lQ4UHTq6A" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Courses</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="LogOut">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid bg-dark py-4">
+        <h1 class="mt-4 text-light">Courses Preview</h1>
+        <p>
+            <a asp-action="AddCourse" class="btn btn-dark">Create New</a>
+        </p>
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 col-xs-6 border-dark mb-3">
+                    <div class="card mb-3">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="card-title mb-0">
+                                @item.CourseName
+                                <a class="text-white float-right" asp-action="EditCourse" asp-route-id="@item.CourseID"><i class="bi bi-pencil-square"></i></a>
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img src="@item.ImageURL" class="card-img-top" width="100%" object-fit-cover alt="@item.CourseName">
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="card-text">Id: <span>@item.CourseID</span></p>
+                                    <p class="card-text">Name: <span>@item.CourseName</span></p>
+                                    <p class="card-text">Category: <span>@item.CourseCategory</span></p>
+                                    <p class="card-text">Price: <span>@item.CoursePrice</span></p>
+                                    <p class="card-text">
+                                        <b>Rating:</b>
+                                        @if (item.CoursePrice >= 3000)
+                                        {
+                                            <span class="badge bg-success text-white">5</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-primary text-white">4.5</span>
+                                        }
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-text">
+                                <a class="btn btn-outline-primary float-right" asp-action="Index" asp-route-id="@item.CourseID"><i class="bi bi-eye-fill"></i>Show Details</a>
+                                <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i> Price: @item.CoursePrice</a>
+                                <a class="btn btn-primary" asp-action="EditCourse" asp-route-id="@item.CourseID">Edit</a>
+                                <a class="btn btn-danger" asp-action="DelCourse" asp-route-id="@item.CourseID">Delete</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-oRLM5SpZV4DthJHsh/c3wszvGCAh2pl1ZUeS6MZxROSTOEuO0PKURaJuzOwdo9e4" crossorigin="anonymous"></script>
+</body>
+</html>

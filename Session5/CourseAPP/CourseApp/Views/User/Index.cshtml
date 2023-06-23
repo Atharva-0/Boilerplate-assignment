@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CourseApp.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid bg-dark py-4">
+    <h1 class="mt-4 text-light">Courses Preview</h1>
+   @* <p>
+        <a asp-action="AddCourse" class="btn btn-dark">Create New</a>
+    </p>
+*@
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 col-xs-6 border-dark mb-3">
+                <div class="card mb-3">
+                    <div class="card-header bg-primary text-white">
+                        <p class="card-text">
+                            <h5 class="card-title mb-0">
+                                @item.CourseName
+                                <a class="text-white float-right" asp-action="EditCourse" asp-route-id="@item.CourseID"><i class="bi bi-pencil-square"></i></a>
+                            </h5>
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="@item.ImageURL" class="card-img-top" width="100%" object-fit-cover alt="@item.CourseName">
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-title">Id: <span>@item.CourseID</span></p>
+                                <p class="card-title">Name: <span>@item.CourseName</span></p>
+                                <p class="card-title">Category: <span>@item.CourseCategory</span></p>
+                                <p class="card-title">Price: <span>@item.CoursePrice</span></p>
+                                <p class="card-title">
+                                    <b>Rating:</b>
+                                    @if (item.CoursePrice >= 3000)
+                                    {
+                                        <span class="badge bg-success text-white">5</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-primary text-white">4.5</span>
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text">
+                          
+                            <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i> Price: @item.CoursePrice</a>
+                            <a class="btn btn-primary" asp-action="AddCourseToCart" asp-route-id="@item.CourseID">ADD TO CART</a>
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
