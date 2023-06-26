@@ -1,17 +1,18 @@
-﻿using CourseApp.Models;
+﻿using CourseApp.Context;
+using CourseApp.Models.Course;
 
 namespace CourseApp.Repository
 {
     public interface ICourseRepository
     {
-        void AddCourse(Course course);
 
+        Task<List<Course>> GetCourses();
+        void  AddCourse(Course course);
+        Task <Course> GetCourseById(int id);
 
-        void DelCourse(int courseId);
+        Task UpdateCourse(Course course);
 
-        List<Course> GetAllCourse();
-        Course GetCourseByID(int id);
-        void Update(Course course);
+        Task DeleteCourse(int id);
+
     }
-
 }

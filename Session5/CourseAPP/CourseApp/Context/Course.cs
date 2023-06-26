@@ -1,0 +1,18 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CourseApp.Context
+{
+    public class Course
+    {
+        [Key] 
+        public int Id { get; set; }
+        public string Name { get; set; }    
+        public double Price { get;set; }
+
+        public string Description { get; set; }
+
+        public  IList<Student> Students { get; set; }
+
+
+    }
+}

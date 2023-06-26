@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Session6.props" />
+</Project>

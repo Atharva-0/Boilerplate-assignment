@@ -1,16 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CourseAPP",
-    "\\CourseAPP\\CourseApp",
-    "\\CourseAPP\\CourseApp\\Constants",
-    "\\CourseAPP\\CourseApp\\Context",
-    "\\CourseAPP\\CourseApp\\Controllers",
-    "\\CourseAPP\\CourseApp\\Models",
-    "\\CourseAPP\\CourseApp\\Repository",
-    "\\CourseAPP\\CourseApp\\Views",
-    "\\CourseAPP\\CourseApp\\Views\\Admin"
+    "\\CourseApp",
+    "\\CourseApp\\CourseApp",
+    "\\CourseApp\\CourseAppClient",
+    "\\CourseApp\\CourseAppClient\\Views",
+    "\\CourseApp\\CourseAppClient\\Views\\Course",
+    "\\CourseApp\\CourseApp\\Repository"
   ],
-  "SelectedNode": "\\CourseAPP\\CourseApp\\Models\\Login.cs",
+  "SelectedNode": "\\CourseApp\\CourseApp.sln",
   "PreviewInSolutionExplorer": false
 }
