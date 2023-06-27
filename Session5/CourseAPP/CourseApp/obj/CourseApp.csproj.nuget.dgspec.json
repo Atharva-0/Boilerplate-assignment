@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\CourseAppApi\\CourseApp\\CourseApp\\CourseApp.csproj": {}
+    "C:\\Users\\User\\Downloads\\CourseApp\\CourseApp\\CourseApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\CourseAppApi\\CourseApp\\CourseApp\\CourseApp.csproj": {
+    "C:\\Users\\User\\Downloads\\CourseApp\\CourseApp\\CourseApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\CourseAppApi\\CourseApp\\CourseApp\\CourseApp.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Downloads\\CourseApp\\CourseApp\\CourseApp.csproj",
         "projectName": "CourseApp",
-        "projectPath": "C:\\Users\\User\\Desktop\\CourseAppApi\\CourseApp\\CourseApp\\CourseApp.csproj",
+        "projectPath": "C:\\Users\\User\\Downloads\\CourseApp\\CourseApp\\CourseApp.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\CourseAppApi\\CourseApp\\CourseApp\\obj\\",
+        "outputPath": "C:\\Users\\User\\Downloads\\CourseApp\\CourseApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,7 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -111,7 +111,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
