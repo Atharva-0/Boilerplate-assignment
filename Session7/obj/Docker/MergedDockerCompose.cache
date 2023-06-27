@@ -1,0 +1,18 @@
+name: dockercompose16463885006477956436
+services:
+  session7:
+    build:
+      context: C:\Users\User\Desktop\boileplate assignment\Session7
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: session7
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose16463885006477956436_default
